@@ -1,0 +1,5 @@
+*.o
+st
+# Persist personal config
+# config.h
+# patches.h

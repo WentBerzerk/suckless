@@ -65,19 +65,14 @@ static const char unknown_str[] = "n/a";
  */
 
 // Custom - Colors for formatting (Requires https://dwm.suckless.org/patches/status2d/)
-// Palette: https://coolors.co/palette/ff595e-ffca3a-8ac926-1982c4-6a4c93
-// Black - #404040
-// Red - #e63946
-// White - #f1faee
-// Light blue - #a8dadc
-// Blue - #457b9d
-// Dark blue - #1d3557
-
 static const struct arg args[] = {
 	/* function format          argument */
-	{ cpu_perc, "^c#ff595e^ ^d^%s%% |", NULL},
+	// no space after %s, see vpn.sh
+	{ run_command, "%s|", "sh ~/Scripts/slstatus/vpn.sh"},
+	{ cpu_perc, " ^c#ff595e^ ^d^%s%% |", NULL},
 	{ ram_perc, " ^c#8ac926^󰘚 ^d^%s%% |", NULL},
 	// { disk_perc, " %s%% used,", "/"},
 	{ disk_free, " ^c#1982c4^󰆼 ^d^%s free |", "/"},
-	{ datetime, " %s",           "^c#6a4c93^󰃭 ^d^%F | ^c#ffca3a^󰥔 ^d^%T" },
+	{ run_command, " %s |", "sh ~/Scripts/slstatus/volume.sh"},
+	{ datetime, " %s", "^c#6a4c93^󰃭 ^d^%F | ^c#ffca3a^󰥔 ^d^%T" },
 };

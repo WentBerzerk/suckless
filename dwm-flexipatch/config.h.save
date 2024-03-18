@@ -180,47 +180,40 @@ static char c000000[]                    = "#000000"; // placeholder value
 // Custom - Defaults are commented out in original and replaced with custom ones here
 
 // Custom colors
-
-// Winter/icy theme
-// #define TEXT_COLOR "#f0f0f0"
-// #define FG_COLOR "#bedce6"
-// #define FG_SHADE_COLOR "#78b4c8"
-// #define BG_COLOR "#0a0e14"
-
-// Orange-red theme
-#define TEXT_COLOR "#f0f0f0"
-#define FG_COLOR "#dd5d40"
-#define FG_SHADE_COLOR "#c34d2d"
-#define BG_COLOR "#2b352a"
+#define BLACKBLUE "#0a0e14"
+#define BLUE "#457b9d"
+#define ICYBLUE "#bedce6"
+#define ICYBLUESHADE "#78b4c8"
+#define WHITE "#f0f0f0"
 
 
 // Replacements
-static char normfgcolor[]          = TEXT_COLOR;
-static char normbgcolor[]          = BG_COLOR;
-static char normbordercolor[]      = BG_COLOR;
+static char normfgcolor[]                = WHITE;
+static char normbgcolor[]                =      BLACKBLUE;
+static char normbordercolor[]            = BLACKBLUE;
 
-static char selfgcolor[]           = BG_COLOR;
-static char selbgcolor[]           = FG_COLOR;
-static char selbordercolor[]       = FG_COLOR;
-static char selfloatcolor[]        = FG_COLOR;
+static char selfgcolor[]                 = BLACKBLUE;
+static char selbgcolor[]                 =   ICYBLUE;
+static char selbordercolor[]             =   ICYBLUE;
+static char selfloatcolor[]              =   ICYBLUE;
 
-static char titlenormfgcolor[]     = FG_COLOR;
-static char titlenormbgcolor[]     = BG_COLOR;
-static char titlenormbordercolor[] = BG_COLOR;
+static char titlenormfgcolor[]           = ICYBLUE;
+static char titlenormbgcolor[]           =      BLACKBLUE;
+static char titlenormbordercolor[]       = BLACKBLUE;
 
-static char titleselfgcolor[]      = BG_COLOR;
-static char titleselbgcolor[]      = FG_SHADE_COLOR;
-static char titleselbordercolor[]  = FG_COLOR;
-static char titleselfloatcolor[]   = FG_COLOR;
+static char titleselfgcolor[]            = BLACKBLUE;
+static char titleselbgcolor[]            =   ICYBLUESHADE;
+static char titleselbordercolor[]        =   ICYBLUE;
+static char titleselfloatcolor[]         =   ICYBLUE;
 
-static char tagsnormfgcolor[]      = FG_COLOR;
-static char tagsnormbgcolor[]      = BG_COLOR;
-static char tagsnormbordercolor[]  = BG_COLOR;
+static char tagsnormfgcolor[]            = ICYBLUE;
+static char tagsnormbgcolor[]            =      BLACKBLUE;
+static char tagsnormbordercolor[]        = BLACKBLUE;
 
-static char tagsselfgcolor[]       = BG_COLOR;
-static char tagsselbgcolor[]       = FG_COLOR;
-static char tagsselbordercolor[]   = FG_COLOR;
-static char tagsselfloatcolor[]    = FG_COLOR;
+static char tagsselfgcolor[]             = BLACKBLUE;
+static char tagsselbgcolor[]             =   ICYBLUE;
+static char tagsselbordercolor[]         =   ICYBLUE;
+static char tagsselfloatcolor[]          =   ICYBLUE;
 
 // --------------------------------------------------
 
@@ -829,9 +822,7 @@ static const char *xkb_layouts[]  = {
 #endif // XKB_PATCH
 
 /* key definitions */
-// Custom - change to Windows key instead of Alt
-// #define MODKEY Mod1Mask
-#define MODKEY Mod4Mask // Change to Windows key
+#define MODKEY Mod1Mask
 #if COMBO_PATCH && SWAPTAGS_PATCH && TAGOTHERMONITOR_PATCH
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      comboview,      {.ui = 1 << TAG} }, \
@@ -1092,7 +1083,7 @@ static const Key keys[] = {
 	#if SHIFTTAG_PATCH
 	{ MODKEY|ShiftMask,             XK_Left,       shifttag,               { .i = -1 } }, // note keybinding conflict with focusadjacenttag tagtoleft
 	{ MODKEY|ShiftMask,             XK_Right,      shifttag,               { .i = +1 } }, // note keybinding conflict with focusadjacenttag tagtoright
-	#endif // SHIFTTAG_PATCH
+)	#endif // SHIFTTAG_PATCH
 	#if SHIFTTAGCLIENTS_PATCH
 	{ MODKEY|ShiftMask|ControlMask, XK_Left,       shifttagclients,        { .i = -1 } },
 	{ MODKEY|ShiftMask|ControlMask, XK_Right,      shifttagclients,        { .i = +1 } },

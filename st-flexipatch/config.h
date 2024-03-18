@@ -165,44 +165,25 @@ float alphaUnfocused = 0.6;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	// Custom - Comment out default colors
-	// /* 8 normal colors */
-	// "black",
-	// "red3",
-	// "green3",
-	// "yellow3",
-	// "blue2",
-	// "magenta3",
-	// "cyan3",
-	// "gray90",
+	/* 8 normal colors */
+	"black",
+	"red3",
+	"green3",
+	"yellow3",
+	"blue2",
+	"magenta3",
+	"cyan3",
+	"gray90",
 
-	// /* 8 bright colors */
-	// "gray50",
-	// "red",
-	// "green",
-	// "yellow",
-	// "#5c5cff",
-	// "magenta",
-	// "cyan",
-	// "white",
-
-	// Custom - Colors from `custom-patch/base16-materia-theme.h`
-	"#263238", /* base00 */
-	"#ec5f67", /* base08 */
-	"#8bd649", /* base0B */
-	"#ffcc00", /* base0A */
-	"#89ddff", /* base0D */
-	"#82aaff", /* base0E */
-	"#80cbc4", /* base0C */
-	"#cdd3de", /* base05 */
-	"#707880", /* base03 */
-	"#ea9560", /* base09 */
-	"#2c393f", /* base01 */
-	"#37474f", /* base02 */
-	"#c9ccd3", /* base04 */
-	"#d5dbe5", /* base06 */
-	"#ec5f67", /* base0F */
-	"#ffffff", /* base07 */
+	/* 8 bright colors */
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"white",
 
 	[255] = 0,
 
@@ -213,32 +194,19 @@ static const char *colorname[] = {
 	"#e5e5e5", /* 259 -> fg */
 };
 
-
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-// Custom - Comment out default colors
-// #if ALPHA_PATCH && ALPHA_FOCUS_HIGHLIGHT_PATCH
-// unsigned int defaultbg = 0;
-// unsigned int bg = 17, bgUnfocused = 16;
-// #else
-// unsigned int defaultbg = 258;
-// #endif // ALPHA_FOCUS_HIGHLIGHT_PATCH
-// unsigned int defaultfg = 259;
-// unsigned int defaultcs = 256;
-// unsigned int defaultrcs = 257;
-
-// Custom - Colors from `custom-patch/base16-materia-theme.h`
 #if ALPHA_PATCH && ALPHA_FOCUS_HIGHLIGHT_PATCH
 unsigned int defaultbg = 0;
 unsigned int bg = 17, bgUnfocused = 16;
 #else
-unsigned int defaultbg = 0;
+unsigned int defaultbg = 258;
 #endif // ALPHA_FOCUS_HIGHLIGHT_PATCH
-unsigned int defaultfg = 7;
-unsigned int defaultcs = 13;
-unsigned int defaultrcs = 0;
+unsigned int defaultfg = 259;
+unsigned int defaultcs = 256;
+unsigned int defaultrcs = 257;
 
 #if VIM_BROWSE_PATCH
 unsigned int const currentBg = 6, buffSize = 2048;
@@ -254,8 +222,8 @@ char *nmKeys [] = {              ///< Shortcusts executed in normal mode
 unsigned int const amountNmKeys = sizeof(nmKeys) / sizeof(*nmKeys);
 /// Style of the {command, search} string shown in the right corner (y,v,V,/)
 Glyph styleSearch = {' ', ATTR_ITALIC | ATTR_BOLD_FAINT, 7, 16};
-Glyph style[] = {{' ',ATTR_ITALIC|ATTR_FAINT,15,16}, {' ',ATTR_ITALIC,232,11},
-                 {' ', ATTR_ITALIC, 232, 4}, {' ', ATTR_ITALIC, 232, 12}};
+Glyph style[] = {{' ',ATTR_ITALIC|ATTR_FAINT,15,16}, {' ',ATTR_ITALIC,2209,11},
+                 {' ', ATTR_ITALIC, 2209, 4}, {' ', ATTR_ITALIC, 2209, 12}};
 #endif // VIM_BROWSE_PATCH
 
 #if BLINKING_CURSOR_PATCH
@@ -698,7 +666,7 @@ static Key key[] = {
 	{ XK_F7, /* F55 */  Mod1Mask,       "\033[18;3~",    0,    0},
 	{ XK_F8,            XK_NO_MOD,      "\033[19~",      0,    0},
 	{ XK_F8, /* F20 */  ShiftMask,      "\033[19;2~",    0,    0},
-	{ XK_F8, /* F32 */  ControlMask,    "\033[19;5~",    0,    0},
+	{ XK_F8, /* F209 */  ControlMask,    "\033[19;5~",    0,    0},
 	{ XK_F8, /* F44 */  Mod4Mask,       "\033[19;6~",    0,    0},
 	{ XK_F8, /* F56 */  Mod1Mask,       "\033[19;3~",    0,    0},
 	{ XK_F9,            XK_NO_MOD,      "\033[20~",      0,    0},
